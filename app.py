@@ -240,11 +240,12 @@ def main():
 		username = st.sidebar.text_input("Enter Email")
 		password = st.sidebar.text_input("Enter Password",type='password')
 		if st.sidebar.checkbox("Login"):
-			st.markdown("<h1 style='text-align: center; color: white;'>Welcome!!</h1>", unsafe_allow_html=True)
 			create_usertable()
 			hashed_pswd = make_hashes(password)
 			result = login_user(username,check_hashes(password,hashed_pswd))
 			if result:
+				st.markdown("<h1 style='text-align: center; color: white;'>Welcome!!</h1>", unsafe_allow_html=True)
+				st.markdown("<p style='text-align: center; color: grey;'>Enter the attributes information and corelation to add to the database.</p>", unsafe_allow_html=True)
 				manipulate()
 			else:
 				st.sidebar.warning("Incorrect Email/Password")
