@@ -67,7 +67,7 @@ def cc(G, nodeColor, edgeColor, font_color, opacityNode, opacityEdge, typeOfGrap
 		alpha=opacityNode)
 		nx.draw_networkx_edges(G,pos,
 		edgelist = widths.keys(),
-		width=list(i/10 for i in widths.values()),
+		width=list(i for i in widths.values()),
 		edge_color=edgeColor,
 		alpha=opacityEdge,arrowsize=100, arrowstyle='->')
 		nx.draw_networkx_labels(G, pos=pos,
@@ -154,7 +154,7 @@ def manipulate():
 			t2 = placeholder2.text_input('text', value='', key=6)
 			corelation = placeholder3.text_input('text', value='', key=7)
 		except :
-				pass
+				st.warning("Invalid Input")
 
 
 def heat(G, df):
